@@ -20,11 +20,12 @@ namespace UnitTestProject1
             // assert
             Assert.AreEqual(expected, area, "Площадь расчитывается неправильно");
         }
+
         [TestMethod]
         public void AreaTest_minus_expected_numberPI()
         {
             double r = -1;
-            double expected = 3.14;
+            double expected = 0;
             Circle circle = new Circle(r);
 
             // Act
@@ -32,6 +33,35 @@ namespace UnitTestProject1
 
             // assert
             Assert.AreEqual(expected, area, "Площадь расчитывается неправильно");
+        }
+
+        [TestMethod]
+        public void CircleTest_minus_expected_numberPI()
+        {
+            double r = -1;
+            double expected = 0;
+            Circle circle = new Circle(r);
+
+            // Act
+            double area = circle.GetСircle();
+
+            // assert
+            Assert.AreEqual(expected, area, "Диаметр окружности расчитан неверно");
+        }
+
+
+        [TestMethod]
+        public void CircleTest_12_expected_75()
+        {
+            double r = 12;
+            double expected = 75.4;
+            Circle circle = new Circle(r);
+
+            // Act
+            double area = circle.GetСircle();
+
+            // assert
+            Assert.AreEqual(expected, area, "Диаметр окружности расчитан неверно");
         }
     }
 }
